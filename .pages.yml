@@ -4,30 +4,33 @@ media:
 
 content:
   - name: webpage
-    label: 网页数据管理
+    label: 网页内容管理
     type: file
     path: data.json
     fields:
       - name: themeColor
-        label: 全局主题色（如002FA7）
+        label: 全局主题色(如002FA7)
         type: string
       - name: coverRightText
-        label: 右上角文字（休恋逝水）
+        label: 封面右上「休恋逝水」
         type: string
       - name: coverRightSub
-        label: 右上角问句（不含问号）
+        label: 封面右上问句
         type: string
       - name: coverSub
-        label: 封面副标题
+        label: 封面左侧大字
+        type: text
+      - name: coverLeftText
+        label: 封面左侧竖线小字
         type: text
       - name: soundPoem
-        label: 音乐页三句诗
+        label: 音乐页下方诗句
         type: text
-      - name: profileName
-        label: 档案名字
-        type: string
       - name: profileRole
-        label: 职业/英文署名
+        label: 介绍页职业英文
+        type: string
+      - name: profileName
+        label: 介绍页名字
         type: string
       - name: profileAge
         label: 年龄
@@ -42,10 +45,19 @@ content:
         label: IP地址
         type: string
       - name: profileStatus
-        label: 状态（性格）
+        label: 状态性格
         type: string
+      - name: guanzhiText
+        label: 观止文字(限2字)
+        type: string
+      - name: contactTime
+        label: 在线时间
+        type: string
+      - name: qrImage
+        label: 收款码图片
+        type: image
       - name: diaries
-        label: 留言日记列表
+        label: 留言日记列表(可无限添加/删除)
         type: object
         list: true
         fields:
@@ -56,7 +68,7 @@ content:
             label: 内容
             type: text
       - name: businesses
-        label: 业务大类列表
+        label: 业务大类列表(可增删)
         type: object
         list: true
         fields:
@@ -67,7 +79,7 @@ content:
             label: 大类描述
             type: string
           - name: items
-            label: 子分类列表
+            label: 子分类列表(可增删)
             type: object
             list: true
             fields:
@@ -75,13 +87,13 @@ content:
                 label: 子分类名
                 type: string
               - name: desc
-                label: 子分类简介
+                label: 子分类简介(限12字)
                 type: string
               - name: link
                 label: 作品链接
                 type: string
       - name: notices
-        label: 须知大类列表
+        label: 须知大类列表(可增删)
         type: object
         list: true
         fields:
@@ -92,15 +104,15 @@ content:
             label: 大类描述
             type: string
           - name: tabs
-            label: 具体分类
+            label: 具体分类(可增删)
             type: object
             list: true
             fields:
               - name: tabName
-                label: 标签名
+                label: 标签名(限2字)
                 type: string
               - name: rules
-                label: 规则列表
+                label: 规则列表(可增删)
                 type: object
                 list: true
                 fields:
@@ -110,12 +122,3 @@ content:
                   - name: desc
                     label: 详情
                     type: text
-      - name: guanzhiText
-        label: 观止文字
-        type: string
-      - name: contactTime
-        label: 在线时间
-        type: string
-      - name: qrImage
-        label: 收款码图片
-        type: image
