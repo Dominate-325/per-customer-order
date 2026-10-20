@@ -8,9 +8,33 @@ content:
     type: file
     path: index.html
     fields:
-      - name: title
-        label: Main Text
+      - name: coverTitle
+        label: 封面大标题
         type: string
-      - name: qr
-        label: QR Code
+      - name: coverSub
+        label: 封面副标题
+        type: string
+      - name: profileName
+        label: 档案名字
+        type: string
+      - name: age
+        label: 年龄
+        type: string
+      - name: sign
+        label: 星座
+        type: string
+      - name: mbti
+        label: MBTI
+        type: string
+      - name: qrImage
+        label: 底部二维码图片
+        type: image
+      - name: workImg1
+        label: 作品展示图1
+        type: image
+      - name: workImg2
+        label: 作品展示图2
+        type: image
+      - name: workImg3
+        label: 作品展示图3
         type: image
