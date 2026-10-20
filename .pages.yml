@@ -4,60 +4,59 @@ media:
 
 content:
   - name: webpage
-    label: 网页内容管理
+    label: 网页所有内容
     type: file
-    path: data.json
+    path: index.html
     fields:
-      - name: themeColor
-        label: 全局主题色(如002FA7)
-        type: string
-      - name: coverRightText
-        label: 封面右上「休恋逝水」
-        type: string
-      - name: coverRightSub
-        label: 封面右上问句
+      # 封面页
+      - name: coverMotto
+        label: 封面中间文字(休恋逝水)
         type: string
       - name: coverSub
-        label: 封面左侧大字
-        type: text
-      - name: coverLeftText
-        label: 封面左侧竖线小字
-        type: text
-      - name: soundPoem
-        label: 音乐页下方诗句
-        type: text
-      - name: profileRole
-        label: 介绍页职业英文
+        label: 封面左下文字(我何去何从)
         type: string
-      - name: profileName
-        label: 介绍页名字
+      # 音乐页
+      - name: musicText
+        label: 音乐页三句文案
+        type: text
+      # 自我介绍页
+      - name: authorEn
+        label: 英文署名(LIN YI)
         type: string
-      - name: profileAge
+      - name: authorJob
+        label: 职业(独立创作者)
+        type: string
+      - name: authorCn
+        label: 中文名字(林壹)
+        type: string
+      - name: age
         label: 年龄
         type: string
-      - name: profileSign
+      - name: sign
         label: 星座
         type: string
-      - name: profileMbti
+      - name: mbti
         label: MBTI
         type: string
-      - name: profileIp
-        label: IP地址
+      - name: location
+        label: 所在地
         type: string
-      - name: profileStatus
-        label: 状态性格
+      - name: status
+        label: 性格标签
         type: string
-      - name: guanzhiText
-        label: 观止文字(限2字)
-        type: string
-      - name: contactTime
-        label: 在线时间
+      # 联系与支付
+      - name: guanzhi
+        label: 观止二字
         type: string
       - name: qrImage
-        label: 收款码图片
+        label: 底部二维码
         type: image
+      - name: workTime
+        label: 在线时间
+        type: string
+      # 日记列表（可无限添加，前端会限制100）
       - name: diaries
-        label: 留言日记列表(可无限添加/删除)
+        label: 日记列表(可增删)
         type: object
         list: true
         fields:
@@ -67,58 +66,15 @@ content:
           - name: content
             label: 内容
             type: text
-      - name: businesses
-        label: 业务大类列表(可增删)
+      # 业务列表（可增删）
+      - name: services
+        label: 业务目录(可增删)
         type: object
         list: true
         fields:
-          - name: title
-            label: 大类名称
+          - name: name
+            label: 业务名称(如陪玩)
             type: string
           - name: desc
-            label: 大类描述
+            label: 对应标签(如情绪/倾诉)
             type: string
-          - name: items
-            label: 子分类列表(可增删)
-            type: object
-            list: true
-            fields:
-              - name: name
-                label: 子分类名
-                type: string
-              - name: desc
-                label: 子分类简介(限12字)
-                type: string
-              - name: link
-                label: 作品链接
-                type: string
-      - name: notices
-        label: 须知大类列表(可增删)
-        type: object
-        list: true
-        fields:
-          - name: title
-            label: 大类名称
-            type: string
-          - name: subTitle
-            label: 大类描述
-            type: string
-          - name: tabs
-            label: 具体分类(可增删)
-            type: object
-            list: true
-            fields:
-              - name: tabName
-                label: 标签名(限2字)
-                type: string
-              - name: rules
-                label: 规则列表(可增删)
-                type: object
-                list: true
-                fields:
-                  - name: title
-                    label: 标题
-                    type: string
-                  - name: desc
-                    label: 详情
-                    type: text
