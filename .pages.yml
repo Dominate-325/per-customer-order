@@ -6,13 +6,10 @@ content:
   - name: webpage
     label: 网页数据管理
     type: file
-    path: data.json  # 关键！后台现在只改这个文件
+    path: data.json
     fields:
       - name: themeColor
-        label: 全局主题色（默认002FA7）
-        type: string
-      - name: coverSub
-        label: 封面副标题
+        label: 全局主题色（如002FA7）
         type: string
       - name: coverRightText
         label: 右上角文字（休恋逝水）
@@ -20,8 +17,11 @@ content:
       - name: coverRightSub
         label: 右上角问句（不含问号）
         type: string
+      - name: coverSub
+        label: 封面副标题
+        type: text
       - name: soundPoem
-        label: 音乐页三句诗（换行）
+        label: 音乐页三句诗
         type: text
       - name: profileName
         label: 档案名字
@@ -61,7 +61,7 @@ content:
         list: true
         fields:
           - name: title
-            label: 大类名称（如：陪玩）
+            label: 大类名称
             type: string
           - name: desc
             label: 大类描述
@@ -75,10 +75,10 @@ content:
                 label: 子分类名
                 type: string
               - name: desc
-                label: 子分类简介（12字内）
+                label: 子分类简介
                 type: string
               - name: link
-                label: 作品链接（选填）
+                label: 作品链接
                 type: string
       - name: notices
         label: 须知大类列表
@@ -97,7 +97,7 @@ content:
             list: true
             fields:
               - name: tabName
-                label: 标签名（2字内）
+                label: 标签名
                 type: string
               - name: rules
                 label: 规则列表
@@ -111,7 +111,7 @@ content:
                     label: 详情
                     type: text
       - name: guanzhiText
-        label: 观止文字（只能2字）
+        label: 观止文字
         type: string
       - name: contactTime
         label: 在线时间
