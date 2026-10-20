@@ -1,0 +1,16 @@
+media:
+  input: assets
+  output: /assets
+
+content:
+  - name: 网页内容
+    label: 网页内容管理
+    type: file
+    path: index.html
+    fields:
+      - name: title
+        label: 网页里的文字
+        type: string
+      - name: qr
+        label: 二维码图片
+        type: image
