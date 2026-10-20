@@ -1,8 +1,55 @@
----
-coverTitle: FREE
-coverSub: 自由，罪大恶极
-profileName: 这冗长的一生何至于此…苦涩 苦涩
-age: "17"
-sign: 白羊
-mbti: INTJ
----
+// ======== 读取 data.json 并渲染 ========
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    // 1. 替换所有基础文字和图片
+    document.querySelectorAll('[data-pages]').forEach(el => {
+      let key = el.getAttribute('data-pages');
+      if (data[key]) {
+        if(el.tagName === 'IMG') el.src = data[key];
+        else if (el.tagName === 'DIV' && key === 'coverSub') el.innerHTML = data[key].replace(/\n/g, '<br>');
+        else if (el.classList.contains('sound-note')) el.innerHTML = data[key].replace(/\n/g, '<br>');
+        else el.innerText = data[key];
+      }
+    });
+
+    // 2. 渲染业务目录
+    let indexHtml = '';
+    if(data.businesses) {
+      data.businesses.forEach((biz, i) => {
+        indexHtml += `<div class="list-item" onclick="openCategory(${i})"><span><span class="num">0${i+1}</span><span class="name">${biz.title}</span></span><span class="desc">${biz.desc}</span></div>`;
+      });
+    }
+    indexHtml += `<div class="list-item" onclick="go(IDX.DESK)" style="margin-top: 20px; border-bottom: none;"><span><span class="num" style="color:var(--blue);">*</span><span class="name blue-text">私人联系</span></span><span class="desc">点击进入</span></div>`;
+    document.getElementById('index-list-container').innerHTML = indexHtml;
+
+    // 3. 渲染日记
+    if(data.diaries) {
+      let diaryHtml = '';
+      data.diaries.slice(0, 100).forEach(d => {
+        diaryHtml += `<div class="msg-item"><div class="msg-date">${d.date}</div><div class="msg-body">${d.content}</div></div>`;
+      });
+      document.getElementById('diary-list-container').innerHTML = diaryHtml;
+    }
+
+    // 4. 渲染须知目录
+    if(data.notices) {
+      let noticeMainHtml = '';
+      data.notices.forEach((notice, i) => {
+        noticeMainHtml += `<div class="big-choice anim d${i+2}" onclick="openNotice(${i})"><div class="bc-k">0${i+1} / ${notice.title.substring(0,2).toUpperCase()}</div><div class="bc-t">${notice.title}</div><div class="bc-d">${notice.subTitle}</div></div>`;
+      });
+      document.getElementById('notice-main-container').innerHTML = noticeMainHtml;
+    }
+
+    // 全局变量存一下，给点开业务和须知用
+    window.siteData = data;
+    
+    // 颜色替换
+    if(data.themeColor) {
+      document.documentElement.style.setProperty('--blue', '#' + data.themeColor);
+      document.documentElement.style.setProperty('--glitch', '#' + data.themeColor);
+    }
+  })
+  .catch(err => console.log("数据加载失败", err));
+
+// 下面的 openCategory、openWork、openNotice、switchTab 保持原样
