@@ -1,0 +1,36 @@
+{
+  "coverRightText": "「休恋逝水」",
+  "coverRightSub": "我何去何从",
+  "coverSub": "自由，\n罪大恶极。",
+  "soundPoem": "我的记忆 停驻伦敦独行的岛\n苦涩的淤青是伦敦夜雨的脉搏\n当凛冬越过英吉利海峡进入伦敦时/我爱你",
+  "profileName": "林壹",
+  "profileRole": "LIN YI / 独立创作者",
+  "profileAge": "18",
+  "profileSign": "白羊座",
+  "profileMbti": "INTJ",
+  "profileIp": "英国-伦敦",
+  "profileStatus": "理性 / 温和 / 文艺",
+  "guanzhiText": "观止",
+  "contactTime": "08:00 am - 23:00 pm",
+  "qrImage": "https://i.hd-r.cn/51299e77-ac93-45c6-a374-df301ade9612.jpg",
+  "diaries": [
+    { "date": "2026.03.11", "content": "今天又把蓝色调深了一格，他们说太暗了，我说刚好，暗一点的东西，看起来安静些" }
+  ],
+  "businesses": [
+    {
+      "title": "陪 玩", "desc": "情绪 / 倾诉 / 爱恋",
+      "items": [ { "name": "虐恋", "desc": "拉扯。寻觅痛感与存在的依据", "link": "" } ]
+    }
+  ],
+  "notices": [
+    {
+      "title": "扩列须知", "subTitle": "留言 · 喜点 · 雷点",
+      "tabs": [
+        {
+          "tabName": "留言",
+          "rules": [ { "title": "会看，不一定回", "desc": "不是冷淡，记忆力不太好，容易看完忘记回。" } ]
+        }
+      ]
+    }
+  ]
+}
